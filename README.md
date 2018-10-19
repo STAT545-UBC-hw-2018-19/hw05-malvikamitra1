@@ -9,5 +9,5 @@ File overview
 | f.csv | csv file |
 | x.csv | csv file |
 | h.csv | csv file |
-| gapminder2_files/figure-html | plots included in the markdown file |
+| myplot.png| image file|
 | Readme.md | This file |
