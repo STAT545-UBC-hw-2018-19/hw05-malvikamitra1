@@ -5,7 +5,7 @@ File overview
 | File name | Comment |
 |:---|:---|
 | hw05-malvikamitra1.Rproj | RStudio project |
-| hw05.Rmd | hw03 RMarkdown output |
+| hw05.Rmd | hw05 RMarkdown output |
 | f.csv | csv file |
 | x.csv | csv file |
 | h.csv | csv file |
