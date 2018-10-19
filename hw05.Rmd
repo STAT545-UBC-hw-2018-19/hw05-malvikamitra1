@@ -3,8 +3,10 @@ title: "HW5"
 author: "Malvika Mitra" 
 date: "15th Oct 2018" 
 output:
-  github_document:
-    toc: yes 
+  html_document:
+    df_print: paged
+editor_options:
+  chunk_output_type: inline
 ---
 ```{r}
 suppressPackageStartupMessages(library(tidyverse))
@@ -195,6 +197,6 @@ s<-ggplot(iris,aes(Sepal.Length,Sepal.Width))+
   ggtitle("Sepal.Width VS Sepal.Length")
 s
 
-ggsave("my_plot.png",s,width=13,height=10,units="cm",scale=1,dpi=400)
+ggsave("my_plot.png",width=13,height=10,units="cm",scale=1,dpi=400)
 ```
 
