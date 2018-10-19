@@ -4,8 +4,10 @@ File overview
 
 | File name | Comment |
 |:---|:---|
-| hw03-malvikamitra1.Rproj | RStudio project |
-| gapminder2.Rmd | hw03 RMarkdown output |
-| gapminder2.html | hw03 HTML work file |
+| hw05-malvikamitra1.Rproj | RStudio project |
+| hw05.Rmd | hw03 RMarkdown output |
+| f.csv | csv file |
+| x.csv | csv file |
+| h.csv | csv file |
 | gapminder2_files/figure-html | plots included in the markdown file |
 | Readme.md | This file |
