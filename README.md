@@ -9,5 +9,6 @@ File overview
 | f.csv | csv file |
 | x.csv | csv file |
 | h.csv | csv file |
-| myplot.png| image file|
+| myplot.png| ![Alt text](Users/amitra/Desktop/hw05-malvikamitra1/my_plot.png)|
 | Readme.md | This file |
+
