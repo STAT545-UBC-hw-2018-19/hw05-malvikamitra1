@@ -12,6 +12,7 @@ editor_options:
 suppressPackageStartupMessages(library(tidyverse))
 library(gapminder)
 library(plotly)
+library(ggplot2)
 ```
 
 # Part 1: Factor management
@@ -26,15 +27,15 @@ Drop Oceania. Filter the Gapminder data to remove observations associated with t
 Reorder the levels of country or continent. Use the forcats package to change the order of the factor levels, based on a principled summary of one of the quantitative variables. Consider experimenting with a summary statistic beyond the most basic choice of the median.
 
 ```{r}
-levels(gapminder$continent)
-nlevels(gapminder$continent)
+levels(gapminder$continent) #to check the levels of factor continent
+nlevels(gapminder$continent) #to check the no.of levels of factor continent
 str(gapminder)
 
 g<-gapminder %>% 
-  filter(continent !="Oceania") 
+  filter(continent !="Oceania") #dropping the level Oceania
 
 g %>%  
-mutate(continent=fct_drop(continent)) %>% 
+mutate(continent=fct_drop(continent)) %>% #dropping unused levels
   str()
 
 g %>%
@@ -56,7 +57,7 @@ The number of rows in the dataframe after the dropping of factors is 1680.
 
 ```{r}
 gapminder %>% 
-  mutate(continent=fct_reorder(continent,pop,.fun=mean)) %>%  
+  mutate(continent=fct_reorder(continent,pop,.fun=mean)) %>%  #reordering using mean instead of median
   ggplot(aes(continent,lifeExp))+
   geom_boxplot()
 ```
@@ -72,7 +73,7 @@ Experiment with one or more of write_csv()/read_csv() (and/or TSV friends),  sav
 ```{r}
 levels(gapminder$continent)
 
-f<-fct_relevel(gapminder$continent,"Oceania","Asia",after=1)%>% 
+f<-fct_relevel(gapminder$continent,"Oceania","Asia",after=1)%>% #releveling 
   levels() %>% 
   head()
 f
@@ -133,7 +134,7 @@ p_scales +
        title="     LifeExp VS POP")+
   theme_bw()+
   theme(axis.text =element_text(size=7),
-        panel.background = element_rect(color="blue"))
+        panel.background = element_rect(color="blue")) #scalling and adding theme to plot
 ``` 
 ## Output:
 
@@ -167,7 +168,7 @@ p<- ggplot(gapminder, aes(pop, lifeExp)) +
 
 
  p %>% 
-   ggplotly()
+   ggplotly() #creating a plotly image
  
  plot_ly(gapminder, 
         x = ~pop, 
@@ -195,13 +196,13 @@ Explicit provision of the plot object p via ggsave(..., plot = p). Show a situat
 ```{r}
 s<-ggplot(iris,aes(Sepal.Length,Sepal.Width))+
   geom_point(aes(color=Species),shape="triangle")+
-  ggtitle("Sepal.Width VS Sepal.Length")
+  ggtitle("Sepal.Width VS Sepal.Length") #creating the image to save in ggsave
 s
 
-ggsave("/Users/amitra/Desktop/hw05-malvikamitra1/data/my_plot.png",s,width=13,height=10,units="cm",scale=1,dpi=400)
+ggsave("/Users/amitra/Desktop/hw05-malvikamitra1/data/my_plot.png",width=13,height=10,units="cm",scale=1,dpi=400)
 
 ```
-![Alt text](/Users/amitra/Desktop/hw05-malvikamitra1/data/my_plot.png)
+![Alt text](hw05-malvikamitra1/data/my_plot.png)
 
 
 
