@@ -198,6 +198,15 @@ s<-ggplot(iris,aes(Sepal.Length,Sepal.Width))+
   ggtitle("Sepal.Width VS Sepal.Length")
 s
 
-ggsave("my_plot.png",s,width=13,height=10,units="cm",scale=1,dpi=400)
+ggsave("/Users/amitra/Desktop/hw05-malvikamitra1/data/my_plot.png",s,width=13,height=10,units="cm",scale=1,dpi=400)
+
 ```
+![Alt text](/Users/amitra/Desktop/hw05-malvikamitra1/data/my_plot.png)
+
+
+
+
+
+
+
 
