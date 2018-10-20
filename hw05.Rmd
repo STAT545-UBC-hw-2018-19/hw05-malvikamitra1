@@ -198,6 +198,6 @@ s<-ggplot(iris,aes(Sepal.Length,Sepal.Width))+
   ggtitle("Sepal.Width VS Sepal.Length")
 s
 
-ggsave("my_plot.png",width=13,height=10,units="cm",scale=1,dpi=400)
+ggsave("my_plot.png",s,width=13,height=10,units="cm",scale=1,dpi=400)
 ```
 
